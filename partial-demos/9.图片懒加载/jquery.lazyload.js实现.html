@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片懒加载特效-jquery.lazyload.js</title>
+		<meta name="Keywords" content="关键词1,关键词2">
+		<meta name="description" content="描述">
+		<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			width:940px;
+			height:100px;
+			margin:100px auto;
+		}
+		
+		ul li{
+			list-style:none;
+			width:288px;
+			height:225px;
+			float:left;
+			margin:10px 12px;
+		}
+		ul li img {
+			width: 288px;
+			height: 180px;
+		}
+		.title{
+			width:288px;
+			height:40px;
+			text-align:center;
+			line-height:40px;
+			box-shadow:0 0 10px #000;
+		}
+		ul li img:hover{
+			opacity:0.5;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>
+					<img src="images/lazyload.png" data-original="images/1.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/2.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/3.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/4.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/5.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/6.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/7.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/8.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/9.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/10.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/11.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/12.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/13.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/14.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/15.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/16.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/17.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/18.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/19.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/20.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+				<li>
+					<img src="images/lazyload.png" data-original="images/21.jpg" alt="美女" class="lazy">
+					<div class="title">
+						绿丛小花精美摄影
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.lazyload.min.js"></script>
+	<script>
+		//jquery的懒加载插件实现懒加载效果
+		//定义一个变量来保存懒加载插件
+    var lazyload = $.noConflict();
+    //json对象
+		lazyload(function(){
+			lazyload("img.lazy").lazyload({effect:"fadeIn"});
+		})
+	</script>
+</html>

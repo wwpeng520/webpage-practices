@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+/*设置父容器*/
+.banner{
+    width: 590px;
+    height: 340px;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+}
+/*把轮播图片水平排列在img容器内，容器宽度大于等于所有图片宽度和*/
+.banner .img{
+    width: 6000px;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+.banner .img li{
+    float: left;
+}
+.banner .num{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);/*不设置宽度，宽度根据圆点数量自动计算，然后水平向左平移50%*/
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 0 5px;
+}
+.banner .num li{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 3px;
+}
+.banner .num li.on{
+    background-color: darkorange;
+}
+.banner .btn{
+    width: 30px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top:50%;
+    margin-top: -25px;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+.banner:hover .btn{
+    display: block;
+}
+.banner .left{
+    left:0;
+}
+.banner .left:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.banner .right{
+    right: 0;
+}
+.banner .right:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+}

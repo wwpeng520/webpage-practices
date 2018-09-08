@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>商城放大镜效果</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.box{
+			width: 1000px;
+			height: 500px;
+			border: 1px solid red;
+			margin: 50px auto;
+		}
+		.small{
+			width: 480px;
+			height: 300px;
+			border: 1px solid #000000;
+			float: left;
+			position: relative;
+		}
+		.small b{
+			width: 100px;
+			height: 100px;
+			background-color: #000000;
+			opacity: 0.4;
+			filter: alpha(opacity=40);
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		.big{
+			width: 400px;
+			height: 400px;
+			border: 1px solid blue;
+			overflow: hidden;
+			float: left;
+			margin-left: 20px;
+			margin-top: 30px;
+			position: relative;
+			display: none;
+		}
+		.big img{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="small"><img src="img/small.jpg" alt="" /><b></b></div>
+		<div class="big"><img src="img/big.jpg" alt="" /></div>
+	</div>
+	<script src="jquery-3.1.1.min.js"></script>
+	<script>
+		$(function(){
+			$(".small").mousemove(function(e){
+				$("b").show();
+				$(".big").show();
+				var L = e.pageX;				//鼠标距窗口左边栏距离
+				var l = $(this).offset().left;  //图片左边缘距窗口左边栏距离
+				var left = L - l - 50;			//left值是‘b’区块的左上角顶点为基准点
+												//‘b’区块（小活动方块）距图片左边缘距离（‘b’区块宽度为100）
+				
+				var T = e.pageY;				//鼠标距窗口上边栏距离
+				var t = $(this).offset().top;	//图片左边缘距窗口上边栏距离
+				var top = T - t - 50;			//‘b’区块（小活动方块）距图片上边缘距离（‘b’区块高度也为100）
+				
+				left = left < 0 ? 0 : left;		//鼠标距离窗口左边栏0-50px时，‘b’区块左边缘应固定在图片左边缘
+				left = left > 380 ? 380 : left;  //鼠标距离窗口右边栏0-50px时，‘b’区块左边缘应固定在图片左边缘（480图片宽度-100‘b’区块宽度）
+				top = top < 0 ? 0 : top;
+				top = top > 200 ? 200 : top;
+				
+				$('b').css({'left':left,'top':top});
+				
+				var imgLeft = -left*4;	// 1920/480=4为图片大小倍数
+				var imgTop = -top*4;
+				imgLeft = imgLeft < -1520 ? -1520 : imgLeft; //为使图片不脱离显示块区域，大图片的left值不能超过-1520px（1920-400）
+				imgTop = imgTop < -800 ? -800 : imgTop;
+				$(".big img").css({'left':imgLeft,'top':imgTop})
+			});
+			
+			$(".small").mouseout(function(){
+				$("b").hide();
+				$(".big").hide();
+			});
+		});
+	</script>
+</body>
+</html>

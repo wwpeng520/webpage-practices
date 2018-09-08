@@ -1,0 +1,105 @@
+*{margin:0;padding:0;}
+html,body{height:100%;}
+li{list-style-type:none;}
+img{vertical-align:middle;}
+a{text-decoration:none;outline:none;}
+.clear{clear:both;}
+
+.ce {
+	display: block;
+	width: 90%;
+	height: 120px;
+	background: rgb(255,255,255);
+	position: absolute;
+	top: 0;
+	padding-left: 10%;
+}
+.ce li {
+	float:left;
+}
+.ce li a {
+	padding: 10px 5px;
+	color: rgb(60,60,60);
+	display: block;
+	margin: 50px 10px 0px;
+	cursor: pointer;
+	font-size: 18px;
+}
+.ce li a:hover {
+	border-bottom: 2px solid rgb(0,82,228);
+}
+.ce li .dqian {
+	background: none;
+}
+.ce li .current {
+	border-bottom: 2px solid rgb(0,82,228);
+}
+.ce_img1 {
+	margin-top: -40px;
+}
+
+/*鼠标向下滚动70px时改变导航样式*/
+.ce2 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin-top: 0;
+	height: 83px;
+	background: rgb(60,60,60);
+	z-index: 5;
+}
+.ce2 li a {
+	color: white;
+}
+.ce2 .ce_li {
+	margin-right:210px;
+}
+.ce2 li a {
+	padding:30px 5px;
+	margin: 0 10px;
+	border: 0;
+}
+.ce2 li a:hover,
+.ce li .current {
+	background: rgb(255,255,255);
+	color: rgb(60,60,60);
+	border-bottom: none;
+}
+/*给每个div设置不同背景色*/
+#div0 {
+	margin-top: 120px;
+	width: 100%;
+	height: 100%;
+	background: rgb(230,230,230);
+}
+#div1 {
+	width:100%;
+	height:100%;
+	background:rgb(253,83,49);
+}
+#div2 {
+	width:100%;
+	height:100%;
+	background:rgb(192,10,185);
+}
+#div3 {
+	width:100%;
+	height:100%;
+	background:rgb(20,156,225);
+}
+#div4 {
+	width:100%;
+	height:100%;
+	background:rgb(249,152,49);
+}
+#div5 {
+	width:100%;
+	height:100%;
+	background:rgb(10,255,60);
+}
+#div6 {
+	width:100%;
+	height:100%;
+	background:rgb(219,230,247);
+}
+

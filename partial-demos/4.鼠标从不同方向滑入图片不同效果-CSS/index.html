@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>纯CSS鼠标从不同方向滑入图片产生不同的图片标题效果</title>
+	<style>
+		#main {
+		width: 720px;
+		margin: 20px auto;
+		padding: 5px;
+		border: 1px solid #999;
+		border-radius: 5px;
+		box-shadow: 2px 2px 5px #666;
+	}
+	#main h3 {
+		text-align: center;
+	}
+	.multi-hover {
+		position: relative;
+		margin:0 auto;
+		line-height: 0;
+		overflow: hidden;
+		text-align: center;
+	}
+	.multi-hover img {
+		width: 720px;
+		margin: 0 auto;
+	}
+	.multi-hover span {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		line-height: 1.5;
+		font-weight: 100;
+		text-align: center;
+		box-sizing: border-box;
+		font-size: 2em;
+		z-index: 2; /*设置所有span层级在背景之上*/
+		transition: .3s linear;/*设置动画效果，如右移入时left值由90%变为0*/
+		color: white;
+		padding: 15%;
+		opacity: 0; /*设置全透明，但是层级在背景之上，只是不显示而已*/
+	  	-webkit-touch-callout: none;
+	  	-webkit-user-select: none;
+	}
+	
+	.multi-hover span:hover { opacity: 1; } /*鼠标移入变不透明*/
+	
+	/*设置左右移入的span层级高于其他的span层级*/
+	.multi-hover span:nth-child(odd):hover { left: 0; z-index: 3; }
+	/*.multi-hover span:nth-child(odd).hover { left: 0; z-index: 1; }*/
+	.multi-hover span:nth-child(even):hover { top: 0; z-index: 3; }
+	/*.multi-hover span:nth-child(even).hover { top: 0; z-index: 1; }*/ 
+	
+	/*初始值left: 90%; 鼠标hover时left: 0; z-index: 3;*/
+	.multi-hover span:nth-child(1) { /* right */
+		top: 0;
+		left: 90%;	
+		background: hsla(0,70%,50%,0.5);  
+	}
+		 
+	.multi-hover span:nth-child(2) { /* top */ 
+		top: -90%;
+		left: 0;
+		background: hsla(90,70%,50%,0.5); 
+	}   
+	
+	.multi-hover span:nth-child(3) { /* left */ 
+		top: 0;
+		left: -90%;
+		background: hsla(180,70%,50%,0.5); 
+	}  
+		
+	.multi-hover span:nth-child(4) { /* bottom */
+		top: 90%;
+		left: 0;
+		background: hsla(270,70%,50%,0.5); 
+	} 
+	</style>
+</head>
+<body>
+	<div id="main">
+		<h3>尝试使用鼠标从图片的四个方向滑入图片看看效果！</h3>
+		<div class="multi-hover">
+			<span>从右侧移入效果</span>
+			<span>从上方移入效果</span>
+			<span>从左侧移入效果</span>
+			<span>从下方移入效果</span>
+			<img src="pic.jpg" alt="Photograph of NGC 1309">
+		</div>
+	</div>
+
+</body>
+</html>

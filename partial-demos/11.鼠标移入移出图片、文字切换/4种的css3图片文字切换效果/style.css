@@ -1,0 +1,102 @@
+*{margin:0;padding:0;}
+h3{font-size:14px;}
+.main{
+  width:900px;
+  margin: 50px auto;
+  padding: 10px;
+  border: 1px solid #999;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-content: space-between;
+}
+.box{
+  width:200px;
+  height:200px;
+  border:5px solid #fff;
+  -webkit-box-shadow:1px 1px 2px #ccc;
+          box-shadow:1px 1px 2px #ccc;
+  cursor:pointer;
+  overflow:hidden;
+  position:relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.box img{
+  position:absolute;
+  left:0;
+  width: auto;
+  height: 100%;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}/* 这里的 transition 是让第4张图可以平滑的渡过*/
+
+.caption{
+  position:absolute;
+  background:rgba(0,0,0,0.8);
+  color:#fff;
+  line-height:140%;
+  left:0;
+  z-index:10;
+  -webkit-transition:all 300ms ease-out;
+  transition:all 300ms ease-out;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.caption p{
+  font-size:12px;
+  /*文本限定在7行，显示不全部分以‘...’代替*/
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.first{
+  text-align:center;
+  /*height:60px;*/
+  line-height:30px;
+  width:200px;
+  bottom:-60px;
+}
+.box:hover .first{bottom:0;}
+
+.second{
+  padding:15px;
+  width:200px;
+  height:200px;
+  top:-200px;
+
+}
+.box:hover .second{
+  -webkit-transform:translateY(100%);
+  transform:translateY(100%);
+}
+
+.third{
+  padding:15px;
+  width:200px;
+  height:200px;
+  opacity:0;
+}
+.box:hover .third{opacity:1;}
+
+.fourth{
+  padding:15px;
+  width:200px;
+  height:200px;
+  left:200px;
+}
+.box:hover .fourth{
+  -webkit-transform:translateX(-100%);
+  transform:translateX(-100%);
+}
+.box:hover .img{
+  -webkit-transform:translateX(-100%);
+  transform:translateX(-100%);
+}

@@ -1,0 +1,73 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+.out{
+    width: 590px;
+    height: 340px;
+    margin: 50px auto;
+    position: relative;
+}
+.out .img li{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.out .num{
+    position: absolute;
+    bottom: 20px;
+    /*left: 0;*/
+    font-size: 0; /*清除li标签display: inline-block后的空格,数字同时也消失了，在li中重新设置该属性数字又重新出现了（可使用默认属性，此时后面li中的font-size和margin都不需设置）*/
+    text-align: center; /*position: absolute；脱离文档流，默认宽度取消了，所以必须后面加上width属性才有效果*/
+    width: 100%;
+}
+.out .num li{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background-color: #666;
+    color: white;
+    display: inline-block;  /*数字横向排列，不用float属性*/
+    font-size: 12px;
+    margin: 0 3px;  /*前面font-size: 0;把空格清除了，所以加上margin*/
+    cursor: pointer;
+}
+.out .num li.active{
+    background-color: #a00;
+}
+.out .btn{
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    top: 50%;
+    margin-top: -30px;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 25px;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    cursor: pointer;    
+    display: none;
+}
+.out:hover .btn{
+    display: block;
+}
+.out .left.btn{
+    left: 0;
+}
+.out .left:hover{
+    background: rgba(0, 0, 0, 0.6);
+}
+.out .right.btn{
+    right: 0;
+}
+.out .right:hover{
+    background: rgba(0, 0, 0, 0.6);
+}
+
